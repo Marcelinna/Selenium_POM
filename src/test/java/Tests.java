@@ -1,8 +1,5 @@
 import methods.Methods;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,6 +15,7 @@ public class Tests {
         driver.navigate().to("https://www.selenium.dev/");
     }
 
+    @Ignore
     @Test
     public void navLinkTest(){
         method = new Methods(driver);
@@ -27,6 +25,37 @@ public class Tests {
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.selenium.dev/projects/");
         method.selectNavLink("Support");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.selenium.dev/support/");
+    }
+
+    @Ignore
+    @Test
+    public void socialLinkTestTwitter(){
+        method = new Methods(driver);
+        method.selectSocialLink("twitter");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://twitter.com/SeleniumHQ");
+    }
+
+    @Ignore
+    @Test
+    public void socialLinkTestFacebook(){
+        method = new Methods(driver);
+        method.selectSocialLink("facebook");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.facebook.com/Selenium2.WebDriver");
+    }
+
+    @Ignore
+    @Test
+    public void socialLinkTestGithub(){
+        method = new Methods(driver);
+        method.selectSocialLink("github");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SeleniumHQ/selenium");
+    }
+
+    @Test
+    public void searchInputTest(){
+        method = new Methods(driver);
+        method.searchInput("Selenium");
+        Assert.assertTrue(driver.getCurrentUrl().contains("Selenium"));
     }
 
     @After

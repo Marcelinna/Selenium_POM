@@ -1,11 +1,10 @@
 package methods;
 
 import locators.Locators;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.awt.print.PageFormat;
 
 public class Methods {
 
@@ -28,5 +27,19 @@ public class Methods {
                 break;
             }
         }
+    }
+
+    public void selectSocialLink (String socialLink){
+        for (int i=0; i<locators.getSocialLink().size();++i){
+            if(locators.getSocialLink().get(i).getAttribute("href").contains(socialLink)){
+                locators.getSocialLink().get(i).click();
+                break;
+            }
+        }
+    }
+
+    public void searchInput(String searchName){
+        locators.getSearchInput().sendKeys(searchName);
+        locators.getSearchInput().sendKeys(Keys.ENTER);
     }
 }
