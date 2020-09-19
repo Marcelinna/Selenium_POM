@@ -42,4 +42,15 @@ public class Methods {
         locators.getSearchInput().sendKeys(searchName);
         locators.getSearchInput().sendKeys(Keys.ENTER);
     }
+
+    public void downloadSelenium(String downloadName){
+        for (int i =0; i<locators.getDownload().size();i++){
+            if(locators.getDownload().get(i).getAttribute("class").contains(downloadName)){
+                locators.getDownload().get(i).click();
+                break;
+            }
+        }
+
+
+    }
 }

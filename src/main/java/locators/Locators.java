@@ -39,4 +39,15 @@ public class Locators {
     public void setSearchInput(WebElement searchInput) {
         this.searchInput = searchInput;
     }
+
+    @FindBy(css = ".download-button")
+    private List<WebElement> download;
+
+    public List<WebElement> getDownload() {
+        return download;
+    }
+
+    public void setDownload(List<WebElement> download) {
+        this.download = download;
+    }
 }

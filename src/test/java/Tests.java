@@ -51,11 +51,19 @@ public class Tests {
         Assert.assertEquals(driver.getCurrentUrl(), "https://github.com/SeleniumHQ/selenium");
     }
 
+    @Ignore
     @Test
     public void searchInputTest(){
         method = new Methods(driver);
         method.searchInput("Selenium");
         Assert.assertTrue(driver.getCurrentUrl().contains("Selenium"));
+    }
+
+    @Test
+    public void downloadTool(){
+        method = new Methods(driver);
+        method.downloadSelenium("webdriver");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.selenium.dev/downloads/");
     }
 
     @After
