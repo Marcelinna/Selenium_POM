@@ -59,11 +59,19 @@ public class Tests {
         Assert.assertTrue(driver.getCurrentUrl().contains("Selenium"));
     }
 
+    @Ignore
     @Test
     public void downloadTool(){
         method = new Methods(driver);
         method.downloadSelenium("webdriver");
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.selenium.dev/downloads/");
+    }
+
+    @Test
+    public void clickDonate(){
+        method = new Methods(driver);
+        method.clickButtonDonate();
+        Assert.assertTrue(driver.getCurrentUrl().contains("donate"));
     }
 
     @After

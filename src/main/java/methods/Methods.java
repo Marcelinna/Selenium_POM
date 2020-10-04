@@ -50,7 +50,11 @@ public class Methods {
                 break;
             }
         }
-
-
     }
+
+    public void clickButtonDonate(){
+        locators.getDonate().click();
+    }
+
+
 }

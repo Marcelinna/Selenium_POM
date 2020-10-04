@@ -50,4 +50,15 @@ public class Locators {
     public void setDownload(List<WebElement> download) {
         this.download = download;
     }
+
+    @FindBy(css ="input[type='image']")
+    private WebElement donate;
+
+    public WebElement getDonate() {
+        return donate;
+    }
+
+    public void setDonate(WebElement donate) {
+        this.donate = donate;
+    }
 }
